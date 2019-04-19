@@ -1,0 +1,39 @@
+<br><br>
+<h2 class="text-center">We used these 4 algorithms in Our dataSet </h2><br>
+<div class="card-group">
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem; cursor: pointer" (click)="onClick(0)">
+  <div class="card-body">
+    <h5 class="card-title">Decision Tree Algorithm</h5>
+    <p class="card-text">use tree representation. Each internal node of the tree corresponds to an attribute, and each leaf node corresponds to a class label.</p>
+  </div>
+</div>&nbsp;&nbsp;
+
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;cursor: pointer" (click)="onClick(1)">
+  <div class="card-body">
+    <h5 class="card-title">Random Forest Algorithm</h5>
+    <p class="card-text">combine tree predictors where each tree depends on the values of a random vector sampled independently with the same distribution for all trees in the forest.</p>
+  </div>
+</div>&nbsp;&nbsp;
+
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;cursor: pointer" (click)="onClick(2)">
+  <div class="card-body">
+    <h5 class="card-title">Naive Bayess Algorithm</h5>
+    <p class="card-text">are simple, probabilistic classifiers that use Bayes' Theorem.</p>
+  </div>
+</div>&nbsp;&nbsp;
+
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;cursor: pointer" (click)="onClick(3)">
+  <div class="card-body">
+    <h5 class="card-title">K_neighbors Algorithm</h5>
+    <p class="card-text">the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification</p>
+  </div>
+</div>&nbsp;&nbsp;
+</div>
+
+<div [hidden]="x" class="alert" [ngClass]="{'alert-info':id==0, 'alert-dark': id==1, 'alert-danger':id==2,'alert-success':id==3}" role="alert">
+  We are using 80% of the dataset for the training and 20% for the test
+  <br> The error range={{error_value}}
+</div>
+
+<button class="btn btn-outline-danger" (click)="onClickPlots()">View some plots</button>

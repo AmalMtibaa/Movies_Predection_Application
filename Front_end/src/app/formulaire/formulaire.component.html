@@ -1,0 +1,135 @@
+<br><br>
+
+<div class="container">
+  <h3 class="text-info">Got a Movie in Mind ? </h3>
+  <h6 class="text-gray">Fill this form</h6>
+<form [formGroup]="form" >
+  <div class="row">
+  <div class="form-group col-md-5">
+    <label >Budget</label>
+    <input type="number" class="form-control" formControlName="budget" >
+  </div>
+    <div class="form-group col-md-5">
+      <label >Oraginal language</label>
+      <select class="form-control" formControlName="original_language">
+        <option>en</option>
+        <option>fr</option>
+        <option>jp</option>
+      </select>
+    </div>
+
+  </div>
+  <div class="row">
+
+
+    <div class="form-group col-md-5">
+      <label>Popularity</label>
+      <input type="number" class="form-control" formControlName="popularity">
+    </div>
+
+    <div class="form-group col-md-5">
+      <label>Release Date</label>
+      <input  class="form-control" type="date" formControlName="release_date">
+    </div>
+
+  </div>
+<div class="row">
+  <div class="form-group col-md-5">
+    <label>Production Companies (3 Max)</label><br>
+    <label class="label1" formArrayName="production_companies" *ngFor="let x1 of productionCompanies">
+    <input type="checkbox" (change)="onCheckboxChange(x1,$event)" value="{{x1}}"> <!--[formControlName]="i"!-->
+    {{x1}}
+  </label>
+  </div>
+
+    <div class="form-group col-md-5">
+      <label>Genre (3 Max)</label><br>
+      <label class="label1" formArrayName="genres" *ngFor="let x1 of genres_choices">
+        <input type="checkbox" (change)="onCheckboxChange1(x1,$event)" value="{{x1}}"> <!--[formControlName]="i"!-->
+        {{x1}}
+      </label>
+      <br>
+      <label>Runtime</label>
+      <input class="form-control" type="number" formControlName="runtime">
+
+      <label>Title</label>
+      <input class="form-control" type="text" formControlName="title">
+    </div>
+</div>
+
+
+<div class="row">
+
+  <div class="form-group col-md-5">
+    <label>Vote Average (between 0 and 10)</label>
+    <input type="number" class="form-control" formControlName="vote_average">
+  </div>
+
+  <div class="form-group col-md-5">
+    <label>vote_count</label>
+    <input type="number" class="form-control" formControlName="vote_count">
+  </div>
+</div>
+<div class="row">
+  <div class="form-group col-md-5">
+    <label >Cast Grade</label>
+    <select class="form-control" formControlName="castgrade">
+      <option>Bad</option>
+      <option>Average</option>
+      <option>Good</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-5">
+    <label >Director Grade</label>
+    <select class="form-control" formControlName="directorGrade">
+      <option>Bad</option>
+      <option>Average</option>
+      <option>Good</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="form-group col-md-5">
+    <label >Writer Grade</label>
+    <select class="form-control" formControlName="writerGrade">
+      <option>Bad</option>
+      <option>Average</option>
+      <option>Good</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-5">
+    <label >Keywords</label>
+    <textarea class="form-control"  rows="3" formControlName="keywords" ></textarea>
+  </div>
+</div>
+  <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="onSubmit(0)">Predict using Descision Tree</button> &nbsp;&nbsp;
+  <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" (click)="onSubmit(2)">Predict using Random Forest</button>&nbsp;&nbsp;
+  <button type="submit" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter" (click)="onSubmit(1)">Predict using K_neighbors</button>&nbsp;&nbsp;
+  <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" (click)="onSubmit(3)">Predict using Naive_Bayes</button>
+
+</form>
+  <br><br>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Predection</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        The algorithm predicts that This Movie will be <br>
+        <b style="color: blue" >{{predection}}</b>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+

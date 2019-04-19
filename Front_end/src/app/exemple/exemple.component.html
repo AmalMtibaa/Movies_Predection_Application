@@ -1,0 +1,52 @@
+<br><br>
+<h3 class="text-info">Here are some Films that you can Predict (not included in the training dataSet) <br>
+Using The Random Forest Algorithm
+</h3>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Budget</th>
+    <th scope="col">Genres</th>
+    <th scope="col">Production_componies</th>
+    <th scope="col">vote_average</th>
+    <th scope="col">Popularity</th>
+    <th scope="col">...</th>
+    <th scope="col">Predict</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let line of res;let i=index">
+    <th scope="row">{{i}}</th>
+    <td>{{line[0]}}</td>
+    <td>{{line[1]}}</td>
+    <td>{{line[5]}}</td>
+    <td>{{line[9]}}</td>
+    <td>{{line[4]}}</td>
+    <td>...</td>
+    <td><button class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter"  (click)="predict(i)">Predict</button></td>
+  </tr>
+  </tbody>
+</table>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Predection</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Random Foest predicts that This Movie will be <br>
+        <b style="color: blue" >{{predection}}</b>
+        AND This predection is <b [ngClass]="{'col1':isTrue==true, 'col2':isTrue==false}">{{isTrue}}</b>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
