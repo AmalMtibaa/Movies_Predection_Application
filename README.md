@@ -16,7 +16,7 @@ This application has 3 main functionalities which are :
   - Evaluating the different used Algorithms by showing different error's values.
   - Testing lines from the dataSet and comparing the prediction  with the actual value of the class
 
-#INSTALL
+INSTALL
 
  * Download Front_end and back_end directories 
  * Run the API2 for the background
