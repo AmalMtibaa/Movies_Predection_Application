@@ -21,6 +21,11 @@ INSTALL
  * Download Front_end and back_end directories 
  * Run the API2 for the background
  * Run the Front_end angular application ( make sure to do npm install to dowload node_modules)
+ 
+## Tools & Technologies
+
+ Python, Scikit-learn, Flask, Excel, Angular7
+ 
 ## Collaborators 
 Amal Mtibaa
 
