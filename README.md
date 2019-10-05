@@ -24,7 +24,7 @@ INSTALL
  
 ## Tools & Technologies
 
- Python, Scikit-learn, Flask, Excel, Angular7
+ Python, Scikit-learn, Flask, Excel, Angular7, Boostrap
  
 ## Collaborators 
 Amal Mtibaa
